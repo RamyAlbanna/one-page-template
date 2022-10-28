@@ -1,5 +1,9 @@
-import { AfterViewInit, Component, ElementRef, HostListener, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-root',
@@ -7,9 +11,19 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   @ViewChildren('menuItems') menuItems: any;
-  @ViewChild('skills') skillsSection: any;
+  @ViewChild('skills') skillsSection: ElementRef<HTMLDivElement>;
+  @ViewChild('walidBtn', { static: true }) walidBtn: ElementRef<HTMLDivElement>;
+  @ViewChild('cardsContainer', { static: true }) cardsContainer: ElementRef<HTMLDivElement>;
+  @ViewChild('cardsTitle', { static: true }) cardsTitle: ElementRef<HTMLDivElement>;
+  @ViewChild('porfolioTitle', { static: true }) porfolioTitle: ElementRef<HTMLDivElement>;
+  @ViewChild('porfolioCardsCards', { static: true }) porfolioCardsCards: ElementRef<HTMLDivElement>;
+  @ViewChild('teamTitle', { static: true }) teamTitle: ElementRef<HTMLDivElement>;
+  @ViewChild('teamTitleH2', { static: true }) teamTitleH2: ElementRef<HTMLDivElement>;
+
+
+
   images = [
     './../assets/images/01.jpg',
     './../assets/images/slider1.jpeg',
@@ -20,6 +34,7 @@ export class AppComponent {
   ];
   zeroScroll: boolean = true;
   started: boolean = false;
+  teamsAnimationStarted: boolean = false;
   mobile: boolean = false;
 
   constructor(config: NgbCarouselConfig) {
@@ -27,6 +42,112 @@ export class AppComponent {
     config.interval = 5000;
     config.showNavigationArrows = false;
   }
+  ngOnInit(): void {
+    this.initLogoAnimation();
+    this.initCardsContainerAnimation();
+    this.initCardsTextAnimation();
+    this.initPorofolioTitleAnimation();
+    this.initPorfolioCardsAnimation();
+    this.initTeamTitleAnimation();
+    this.initTeamtitleH2Animation();
+  }
+
+  initLogoAnimation() {
+    gsap.fromTo(this.walidBtn.nativeElement, {
+      opacity: 0,
+      scale: 0,
+      rotate: 1440
+    }, {
+      duration: 3,
+      opacity: 1,
+      scale: 1.5,
+      rotate: 0,
+      scrollTrigger: {
+        toggleActions: 'restart none restart none',
+      }
+    });
+  }
+
+  initCardsContainerAnimation() {
+    gsap.from(this.cardsContainer.nativeElement, {
+      opacity: 0,
+      duration: 3,
+      ease: 'expo',
+      x: -500,
+      scrollTrigger: {
+        trigger: this.cardsContainer.nativeElement,
+        toggleActions: 'restart restart none none'
+      }
+    });
+  }
+
+  initCardsTextAnimation() {
+    gsap.from(this.cardsTitle.nativeElement, {
+      opacity: 0,
+      duration: 3,
+      ease: 'bounce',
+      x: 500,
+      scrollTrigger: {
+        trigger: this.cardsTitle.nativeElement,
+        toggleActions: 'restart none none none'
+      }
+    });
+  }
+
+
+  initPorofolioTitleAnimation() {
+    gsap.from(this.porfolioTitle.nativeElement, {
+      opacity: 0,
+      ease: 'power0',
+      x: 500,
+      scrollTrigger: {
+        trigger: this.porfolioTitle.nativeElement,
+        scrub: true,
+      }
+    });
+  }
+
+
+  initPorfolioCardsAnimation() {
+    gsap.from(this.porfolioCardsCards.nativeElement, {
+      opacity: 0,
+      scale: 0.1,
+      ease: 'power0',
+      scrollTrigger: {
+        end: 'top 70%',
+        trigger: this.porfolioCardsCards.nativeElement,
+        scrub: true,
+      }
+    });
+  }
+
+  initTeamTitleAnimation() {
+    gsap.from(this.teamTitle.nativeElement, {
+      opacity: 0,
+      scale: 0,
+      ease: 'power0',
+      scrollTrigger: {
+        trigger: this.teamTitle.nativeElement,
+        toggleActions: 'restart restart none reverse'
+      }
+    });
+  }
+
+  initTeamtitleH2Animation() {
+    gsap.from(this.teamTitleH2.nativeElement, {
+      letterSpacing: 125,
+      ease: 'bounce',
+      duration: 3,
+      scrollTrigger: {
+        trigger: this.teamTitleH2.nativeElement,
+        toggleActions: 'restart restart none reverse'
+      }
+    });
+  }
+
+
+
+
 
 
 
@@ -35,8 +156,10 @@ export class AppComponent {
   // events
   @HostListener('window:scroll', ['$event'])
   onScroll = () => {
-    this.zeroScroll = document.documentElement.scrollTop === 0;
-    if (document.documentElement.scrollTop > this.skillsSection.nativeElement.offsetTop - 300) this.started = true;
+    let scrollTop = document.documentElement.scrollTop;
+    this.zeroScroll = scrollTop === 0;
+    if (scrollTop > this.skillsSection.nativeElement.offsetTop - 300) this.started = true;
+    this.teamsAnimationStarted = (scrollTop > 3080);
   }
 
   showMenu = () => {

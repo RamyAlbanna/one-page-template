@@ -100,6 +100,7 @@ $mainColor: #333333;
 
             .active {
                 background-color: $mainColor;
+                opacity: 0.3;
                 color: white;
             }
 
@@ -314,9 +315,11 @@ $mainColor: #333333;
     .single-work {
         margin-bottom: 30px;
         position: relative;
+        transition: 0.8s;
 
         img {
             width: 100%;
+            transition: 0.8s;
         }
 
         h4 {
@@ -335,8 +338,6 @@ $mainColor: #333333;
             opacity: 0;
             transition: 0.8s;
         }
-
-        transition: 0.8s;
 
         &:hover {
             box-shadow: 0 20px 30px 0 rgb(0 0 0 / 20%);
@@ -375,8 +376,62 @@ $mainColor: #333333;
 }
 
 .our-team {
+    .col-md-3.first {
+        opacity: 0;
+    }
+
+    .col-md-3.second {
+        opacity: 0;
+    }
+
+    .col-md-3.third {
+        opacity: 0;
+    }
+
+    .col-md-3.fourth {
+        opacity: 0;
+    }
+
+    .left-teams-start-animation {
+        animation: leftTeamsAnimation 1s ease-in-out forwards;
+        opacity: 1;
+    }
+
+    .right-teams-start-animation {
+        animation: rightTeamsAnimation 1s ease-in-out forwards;
+        opacity: 1;
+    }
+
+    @keyframes leftTeamsAnimation {
+
+        0% {
+            transform: translateX(-500px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+
+    @keyframes rightTeamsAnimation {
+
+        0% {
+            transform: translateX(500px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
     .section-title h2 {
         margin-bottom: 20px;
+        letter-spacing: 125;
 
         &::after {
             content: "";
@@ -395,6 +450,7 @@ $mainColor: #333333;
     }
 
     .single-person {
+
         .single-person-info {
             background: #f6f6f6;
             display: flex;
