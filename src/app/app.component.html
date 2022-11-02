@@ -56,17 +56,17 @@
 
   <section id="services" class="our-services section-padding text-center">
     <div class="container">
-      <div class="row" #cardsTitle>
+      <div class="row">
         <div class="col-md-12">
-          <div class="section-title mb-5">
+          <div #cardsTitle class="section-title mb-5">
             <h2 class="bold">OUR SERVICES</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elitsed eiusmod tempor enim minim veniam quis notru
               exercit ation Lorem ipsum dolor sit amet.Veniam quis notru exercit.</p>
           </div>
         </div>
       </div>
-      <div class="row" #cardsContainer>
-        <div class="col-md-4">
+      <div class="row">
+        <div #leftCard class="col-md-4">
           <div class="single-service">
             <i class="fa fa-camera"></i>
             <h4>DESIGNS THINKING</h4>
@@ -77,7 +77,7 @@
             </a>
           </div>
         </div>
-        <div class="col-md-4">
+        <div #centerCard class="col-md-4">
           <div class="single-service">
             <i class="fa fa-camera" aria-hidden="true"></i>
             <h4>DESIGNS THINKING</h4>
@@ -88,7 +88,7 @@
             </a>
           </div>
         </div>
-        <div class="col-md-4">
+        <div #rightCard class="col-md-4">
           <div class="single-service">
             <i class="fa fa-camera" aria-hidden="true"></i>
             <h4>DESIGNS THINKING</h4>
@@ -99,7 +99,7 @@
             </a>
           </div>
         </div>
-        <div class="col-md-4">
+        <div #leftCard class="col-md-4">
           <div class="single-service">
             <i class="fa fa-camera" aria-hidden="true"></i>
             <h4>DESIGNS THINKING</h4>
@@ -110,7 +110,7 @@
             </a>
           </div>
         </div>
-        <div class="col-md-4">
+        <div #centerCard class="col-md-4">
           <div class="single-service">
             <i class="fa fa-camera" aria-hidden="true"></i>
             <h4>DESIGNS THINKING</h4>
@@ -121,7 +121,7 @@
             </a>
           </div>
         </div>
-        <div class="col-md-4">
+        <div #rightCard class="col-md-4">
           <div class="single-service">
             <i class="fa fa-camera" aria-hidden="true"></i>
             <h4>DESIGNS THINKING</h4>
@@ -180,9 +180,89 @@
     </div>
   </section>
 
+  <section id="team" #team class="our-team section-padding text-center">
+    <div class="container">
+      <div class="row" #teamTitle>
+        <div class="col-md-12">
+          <div class="section-title mb-5">
+            <h2 class="bold" #teamTitleH2>OUR TEAM</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elitsed eiusmod tempor enim minim veniam quis notru
+              exercit ation Lorem ipsum dolor sit amet.Veniam quis notru exercit.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div #leftCard class="col-md-3">
+          <div class="single-person">
+            <img src="../assets/images/person1.jpg" alt="">
+            <div class="single-person-info">
+              <div class="person-info">
+                <h4>JHON DOE</h4>
+                <p>Founder & CEO</p>
+              </div>
+              <div class="person-social-contact">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-linkedin"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div #leftCard class="col-md-3">
+          <div class="single-person">
+            <img src="../assets/images/person2.jpg" alt="">
+            <div class="single-person-info">
+              <div class="person-info">
+                <h4>JHON DOE</h4>
+                <p>Founder & CEO</p>
+              </div>
+              <div class="person-social-contact">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-linkedin"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div #rightCard class="col-md-3">
+          <div class="single-person">
+            <img src="../assets/images/person3.jpg" alt="">
+            <div class="single-person-info">
+              <div class="person-info">
+                <h4>JHON DOE</h4>
+                <p>Founder & CEO</p>
+              </div>
+              <div class="person-social-contact">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-linkedin"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div #rightCard class="col-md-3">
+          <div class="single-person">
+            <img src="../assets/images/person4.jpg" alt="">
+            <div class="single-person-info">
+              <div class="person-info">
+                <h4>JHON DOE</h4>
+                <p>Founder & CEO</p>
+              </div>
+              <div class="person-social-contact">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-linkedin"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="portfolio" class="our-work section-padding text-center">
     <div class="container">
-      <div class="row" #porfolioTitle>
+      <div class="row" #cardsTitle>
         <div class="col-md-12">
           <div class="section-title mb-5">
             <h2 class="bold">OUR WORK</h2>
@@ -191,8 +271,8 @@
           </div>
         </div>
       </div>
-      <div class="row" #porfolioCardsCards>
-        <div class="col-md-4">
+      <div class="row">
+        <div #leftCard class="col-md-4">
           <div class="single-work">
             <img src="../assets/images/work-1.jpg" alt="">
             <div class="work-overlay">
@@ -201,7 +281,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div #centerCard class="col-md-4">
           <div class="single-work">
             <img src="../assets/images/work-2.jpg" alt="">
             <div class="work-overlay">
@@ -210,7 +290,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div #rightCard class="col-md-4">
           <div class="single-work">
             <img src="../assets/images/work-3.jpg" alt="">
             <div class="work-overlay">
@@ -219,7 +299,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div #leftCard class="col-md-4">
           <div class="single-work">
             <img src="../assets/images/work-4.jpg" alt="">
             <div class="work-overlay">
@@ -228,7 +308,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div #centerCard class="col-md-4">
           <div class="single-work">
             <img src="../assets/images/work-5.jpg" alt="">
             <div class="work-overlay">
@@ -237,7 +317,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div #rightCard class="col-md-4">
           <div class="single-work">
             <img src="../assets/images/work-6.jpg" alt="">
             <div class="work-overlay">
@@ -279,86 +359,6 @@
             <i class="fa fa-star"></i>
             <h2>2490</h2>
             <p>Awarded Won</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="team" class="our-team section-padding text-center">
-    <div class="container">
-      <div class="row" #teamTitle>
-        <div class="col-md-12">
-          <div class="section-title mb-5">
-            <h2 class="bold" #teamTitleH2>OUR TEAM</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elitsed eiusmod tempor enim minim veniam quis notru
-              exercit ation Lorem ipsum dolor sit amet.Veniam quis notru exercit.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 first" [class.left-teams-start-animation]=teamsAnimationStarted>
-          <div class="single-person">
-            <img src="../assets/images/person1.jpg" alt="">
-            <div class="single-person-info">
-              <div class="person-info">
-                <h4>JHON DOE</h4>
-                <p>Founder & CEO</p>
-              </div>
-              <div class="person-social-contact">
-                <i class="fa fa-facebook"></i>
-                <i class="fa fa-twitter"></i>
-                <i class="fa fa-linkedin"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 second" [class.left-teams-start-animation]=teamsAnimationStarted>
-          <div class="single-person">
-            <img src="../assets/images/person2.jpg" alt="">
-            <div class="single-person-info">
-              <div class="person-info">
-                <h4>JHON DOE</h4>
-                <p>Founder & CEO</p>
-              </div>
-              <div class="person-social-contact">
-                <i class="fa fa-facebook"></i>
-                <i class="fa fa-twitter"></i>
-                <i class="fa fa-linkedin"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 third" [class.right-teams-start-animation]=teamsAnimationStarted>
-          <div class="single-person">
-            <img src="../assets/images/person3.jpg" alt="">
-            <div class="single-person-info">
-              <div class="person-info">
-                <h4>JHON DOE</h4>
-                <p>Founder & CEO</p>
-              </div>
-              <div class="person-social-contact">
-                <i class="fa fa-facebook"></i>
-                <i class="fa fa-twitter"></i>
-                <i class="fa fa-linkedin"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 fourth" [class.right-teams-start-animation]=teamsAnimationStarted>
-          <div class="single-person">
-            <img src="../assets/images/person4.jpg" alt="">
-            <div class="single-person-info">
-              <div class="person-info">
-                <h4>JHON DOE</h4>
-                <p>Founder & CEO</p>
-              </div>
-              <div class="person-social-contact">
-                <i class="fa fa-facebook"></i>
-                <i class="fa fa-twitter"></i>
-                <i class="fa fa-linkedin"></i>
-              </div>
-            </div>
           </div>
         </div>
       </div>
