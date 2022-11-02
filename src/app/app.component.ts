@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren, ViewEncapsulation } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -180,10 +180,12 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   showMenu = () => {
     this.mobile = true;
+    document.body.style.overflow = 'hidden';
   }
 
   removeShow = () => {
     this.mobile = false;
+    document.body.style.overflow = 'visible';
   }
 
   setActive = (item: string) => {
@@ -194,12 +196,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       } else {
         this.menuItems._results[i].nativeElement.classList.remove('active');
       }
-    }
-  }
-
-  removeClassActive = () => {
-    for (let i = 0; i < this.menuItems._results.length; i++) {
-      this.menuItems._results[i].nativeElement.classList.remove('active');
     }
   }
 }

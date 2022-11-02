@@ -14,64 +14,7 @@ $mainColor: #333333;
     .fa-bars {
         display: none;
     }
-
-    @media all and (max-width: 900px) {
-        .header {
-            transition: 0.3s;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background-color: black;
-            z-index: 3;
-            transform: translateY(-100%);
-
-            .header-content {
-                display: flex;
-                flex-direction: column;
-
-                .nav-items {
-                    display: flex;
-                    flex-direction: column;
-                }
-            }
-
-            .fa-times {
-                color: #fff;
-                font-size: 30px;
-                position: absolute;
-                top: 0;
-                left: 0;
-                padding: 20px;
-                display: block;
-                cursor: pointer;
-            }
-        }
-
-        .show {
-            transition: 0.3s;
-            transform: translateY(0);
-        }
-
-        .mobile-menu {
-            width: fit-content;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 3;
-        }
-
-        .fa-bars {
-            cursor: pointer;
-            color: #fff;
-            display: block;
-            font-size: 30px;
-            padding: 20px;
-        }
-    }
 }
-
 
 .header {
     transition: 0.5s;
@@ -505,6 +448,8 @@ $mainColor: #333333;
     }
 }
 
+
+
 @media (min-width: 1400px) {
 
     .container-xxl,
@@ -520,9 +465,63 @@ $mainColor: #333333;
 
 
 @media (max-width:900px) {
-    .stickyHeader {
-        background-color: #FFF;
 
+    .header {
+        transition: 0.3s;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        z-index: 3;
+        transform: translateY(-100%);
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+
+            .nav-items {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .fa-times {
+            color: #fff;
+            font-size: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 20px;
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    .show {
+        transition: 0.3s;
+        transform: translateY(0);
+    }
+
+    .mobile-menu {
+        width: fit-content;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 3;
+
+        .fa-bars {
+            cursor: pointer;
+            color: #fff;
+            display: block;
+            font-size: 30px;
+            padding: 20px;
+        }
+    }
+
+
+    .stickyHeader {
         .header-content {
             .logo {
                 color: #000;
